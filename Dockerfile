@@ -1,5 +1,6 @@
 FROM webdevops/php-nginx:latest
 
+# http://ifcopenshell.org/ifcconvert.html
 RUN wget -O /tmp/ifcconvert.zip https://github.com/IfcOpenShell/IfcOpenShell/releases/download/v0.5.0-preview2/IfcConvert-master-9ad68db-linux64.zip \
     && unzip /tmp/ifcconvert.zip -d /tmp \
     && ln -s /tmp/IfcConvert /usr/local/bin/IfcConvert
