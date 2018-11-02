@@ -6,8 +6,8 @@
     },
     "autoload": {
         "psr-4": {
-            "WebIfc\\": "src",
-            "webIfc\\Test\\": "test/"
+            "Ifc2Gltf\\": "src",
+            "Ifc2Gltf\\Test\\": "test/"
         }
     },
     "require-dev": {

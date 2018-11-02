@@ -1,6 +1,6 @@
 <?php
 
-namespace WebIfc;
+namespace Ifc2Gltf;
 
 final class TemporaryFileFactory
 {

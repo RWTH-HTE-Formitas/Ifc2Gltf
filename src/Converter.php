@@ -1,6 +1,6 @@
 <?php
 
-namespace WebIfc;
+namespace Ifc2Gltf;
 
 use Symfony\Component\Process\Process;
 

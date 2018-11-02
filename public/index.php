@@ -9,5 +9,5 @@ $config = [
 ];
 
 $app = new \Slim\App($config);
-$app->get('/ifcToGltf', \WebIfc\Controller::class . ':ifcToGltf');
+$app->get('/ifcToGltf', \Ifc2Gltf\Controller::class . ':ifcToGltf');
 $app->run();

@@ -1,6 +1,6 @@
 <?php
 
-namespace WebIfc;
+namespace Ifc2Gltf;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
