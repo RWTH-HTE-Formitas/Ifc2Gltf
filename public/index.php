@@ -2,6 +2,12 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$app = new \Slim\App();
+$config = [
+    'settings' => [
+        'displayErrorDetails' => true,
+    ],
+];
+
+$app = new \Slim\App($config);
 $app->get('/ifcToGltf', \WebIfc\Controller::class . ':ifcToGltf');
 $app->run();
