@@ -16,4 +16,6 @@ RUN composer self-update
 RUN composer install --working-dir=/app --prefer-dist --no-progress --no-interaction
 
 ENV WEB_DOCUMENT_ROOT=/app/public \
-    WEB_DOCUMENT_INDEX=index.php
+    WEB_DOCUMENT_INDEX=index.php \
+    PHP_MAX_EXECUTION_TIME=0
+

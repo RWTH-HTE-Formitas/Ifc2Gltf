@@ -31,7 +31,7 @@ final class Converter
     public function convertIfcToCollada(string $ifcFilePath): string
     {
         $targetFilePath = TemporaryFileFactory::getTemporaryFilePath('.dae');
-        (new Process(['IfcConvert', $ifcFilePath, $targetFilePath]))->mustRun();
+        (new Process(['IfcConvert', $ifcFilePath, $targetFilePath]))->setTimeout(null)->mustRun();
 
         return $targetFilePath;
     }
@@ -46,7 +46,7 @@ final class Converter
     public function convertColladaToGlTF(string $colladaFilePath): string
     {
         $targetFilePath = TemporaryFileFactory::getTemporaryFilePath('.gltf');
-        (new Process(['COLLADA2GLTF-bin', $colladaFilePath, $targetFilePath]))->mustRun();
+        (new Process(['COLLADA2GLTF-bin', $colladaFilePath, $targetFilePath]))->setTimeout(null)->mustRun();
 
         return $targetFilePath;
     }
