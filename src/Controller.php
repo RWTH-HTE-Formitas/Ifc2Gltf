@@ -1,32 +1,19 @@
 <?php
 
-namespace WebIfc;
+namespace Ifc2Gltf;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
 
 final class Controller
 {
-    /**
-     * @var Container
-     */
-    protected $container;
-
-    public function __construct(Container $container)
+    public function ifcToGltf(Request $request, Response $response, array $args)
     {
-        $this->container = $container;
-    }
-
-    public function noteScene(Request $request, Response $response, array $args)
-    {
-        $repository = $this->getRepository();
-        $project = $repository->getProject($args['projectId']);
-
-        $ifcFilePath = $this->retrieveFile($project->getIfcModelUrl());
+        $ifcFilePath = $this->retrieveFile($request->getQueryParam('source'));
         $glTfFilePath = $this->getConverter()->convertIfcToGlTF($ifcFilePath);
 
         return $response
-            ->withAddedHeader('Content-Disposition', "attachment; filename=\"scene-{$project->getId()}.gltf\"")
+            ->withAddedHeader('Content-Disposition', "attachment; filename=\"model.gltf\"")
             ->withAddedHeader('Content-Length', filesize($glTfFilePath))
             ->withAddedHeader('Content-Type', 'model/gltf+json')
             ->write(file_get_contents($glTfFilePath))
@@ -59,11 +46,6 @@ final class Controller
 
     private function getConverter(): Converter
     {
-        return $this->container->get('converter');
-    }
-
-    private function getRepository(): Repository
-    {
-        return $this->container->get('repository');
+        return new Converter();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace WebIfc\Test\Unit;
+namespace Ifc2Gltf\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
 

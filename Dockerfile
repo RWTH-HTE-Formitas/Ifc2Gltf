@@ -1,5 +1,6 @@
 FROM webdevops/php-nginx:latest
 
+# http://ifcopenshell.org/ifcconvert.html
 RUN wget -O /tmp/ifcconvert.zip https://github.com/IfcOpenShell/IfcOpenShell/releases/download/v0.5.0-preview2/IfcConvert-master-9ad68db-linux64.zip \
     && unzip /tmp/ifcconvert.zip -d /tmp \
     && ln -s /tmp/IfcConvert /usr/local/bin/IfcConvert
@@ -15,4 +16,6 @@ RUN composer self-update
 RUN composer install --working-dir=/app --prefer-dist --no-progress --no-interaction
 
 ENV WEB_DOCUMENT_ROOT=/app/public \
-    WEB_DOCUMENT_INDEX=index.php
+    WEB_DOCUMENT_INDEX=index.php \
+    PHP_MAX_EXECUTION_TIME=0
+

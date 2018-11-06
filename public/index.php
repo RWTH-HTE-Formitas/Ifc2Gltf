@@ -2,9 +2,12 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$config = require __DIR__ . '/../config.php';
-$container = new \WebIfc\Container($config);
+$config = [
+    'settings' => [
+        'displayErrorDetails' => true,
+    ],
+];
 
-$app = new \Slim\App($container);
-$app->get('/project-{projectId}/scene.gltf', \WebIfc\Controller::class . ':noteScene');
+$app = new \Slim\App($config);
+$app->get('/ifcToGltf', \Ifc2Gltf\Controller::class . ':ifcToGltf');
 $app->run();
