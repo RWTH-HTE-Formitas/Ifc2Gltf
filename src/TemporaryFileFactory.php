@@ -8,6 +8,7 @@ final class TemporaryFileFactory
 
     /**
      * Creates a temporary file with the given suffix and returns its path.
+     * The file is removed when the process exits.
      *
      * @param string $suffix
      * @return string

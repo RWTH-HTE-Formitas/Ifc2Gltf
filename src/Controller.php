@@ -5,6 +5,10 @@ namespace Ifc2Gltf;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+/**
+ * Controller for the http endpoint.
+ * The routes for each action within this controller are defined in public/index.php
+ */
 final class Controller
 {
     public function ifcToGltf(Request $request, Response $response, array $args)

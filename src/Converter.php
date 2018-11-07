@@ -4,6 +4,10 @@ namespace Ifc2Gltf;
 
 use Symfony\Component\Process\Process;
 
+/**
+ * Provides a simple interface for the actual conversion to convert between different formats based on given model file
+ * paths.
+ */
 final class Converter
 {
     /**
