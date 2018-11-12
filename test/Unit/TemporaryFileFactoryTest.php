@@ -7,7 +7,8 @@ use Ifc2Gltf\TemporaryFileFactory;
 
 final class TemporaryFileFactoryTest extends TestCase
 {
-    public function test(){
+    public function test()
+    {
         $suffix = '.tmp';
         $systemTempDirectory = sys_get_temp_dir();
         $temporaryFileFactory = TemporaryFileFactory::getTemporaryFilePath($suffix);
