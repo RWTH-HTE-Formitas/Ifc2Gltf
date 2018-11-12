@@ -11,7 +11,7 @@ use Slim\Http\Response;
  */
 final class Controller
 {
-    public function ifcToGltf(Request $request, Response $response, array $args)
+    public function ifcToGltf(Request $request, Response $response)
     {
         $ifcFilePath = $this->retrieveFile($request->getQueryParam('source'));
         $glTfFilePath = $this->getConverter()->convertIfcToGlTF($ifcFilePath);
