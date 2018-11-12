@@ -7,9 +7,6 @@ use Ifc2Gltf\TemporaryFileFactory;
 
 final class TemporaryFileFactoryTest extends TestCase
 {
-
-
-    // Test for TemporaryFileFactory
     public function test(){
         $suffix = '.tmp';
         $systemTempDirectory = sys_get_temp_dir();
@@ -24,12 +21,5 @@ final class TemporaryFileFactoryTest extends TestCase
         // Assert that TEMP folder exists and is writable
         static::assertDirectoryExists($systemTempDirectory);
         static::assertDirectoryIsWritable($systemTempDirectory);
-
-    
-
     }
-
-
-
-
 }
