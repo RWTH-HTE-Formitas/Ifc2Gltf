@@ -30,3 +30,11 @@ When the service runs there is an http endpoint which can be used to transparent
 ```bash
 $ curl --output model.gltf http://localhost:8080/ifcToGltf?source=http://domain.tld/model.ifc
 ```
+
+## Testing
+
+The included tests can be run like this:
+
+```bash
+$ docker run -it -v "$(pwd)"/:/app ifc2gltf /app/vendor/bin/phpunit /app/test
+```
