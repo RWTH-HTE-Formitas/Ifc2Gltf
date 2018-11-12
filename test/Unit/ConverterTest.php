@@ -10,13 +10,13 @@ final class ConverterTest extends TestCase
 
     public function testIfEndFileExists ()
     {
-        $file = (new Converter())->convertIfcToGlTF('../assets/Office_A_20110811.ifc');
+        $file = (new Converter())->convertIfcToGlTF(__DIR__ . '/../assets/Office_A_20110811.ifc');
         static::assertTrue(file_exists($file));
     }
 
     public function testEndFileExtension ()
     {
-        $file = (new Converter())->convertIfcToGlTF('../assets/Office_A_20110811.ifc');
+        $file = (new Converter())->convertIfcToGlTF(__DIR__ . '/../assets/Office_A_20110811.ifc');
         $info = pathinfo($file);
         static::assertEquals('.gltf', $info['extension']);
     }
@@ -25,13 +25,13 @@ final class ConverterTest extends TestCase
 
     public function testIfColladaFileExists ()
     {
-        $file = (new Converter())->convertIfcToCollada('../assets/Office_A_20110811.ifc');
+        $file = (new Converter())->convertIfcToCollada(__DIR__ . '/../assets/Office_A_20110811.ifc');
         static::assertTrue(file_exists($file));
     }
 
     public function testColladaFileExtension ()
     {
-        $file = (new Converter())->convertIfcToCollada('../assets/Office_A_20110811.ifc');
+        $file = (new Converter())->convertIfcToCollada(__DIR__ . '/../assets/Office_A_20110811.ifc');
         $info = pathinfo($file);
         static::assertEquals('.dae', $info['extension']);
     }
