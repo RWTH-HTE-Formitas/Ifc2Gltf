@@ -40,13 +40,13 @@ final class ConverterTest extends TestCase
 
     public function testIfGltfFileExists ()
     {
-        $file = (new Converter())->convertColladaToGlTF('../assets/Office_A_20110811.ifc');
+        $file = (new Converter())->convertColladaToGlTF(__DIR__ . '/../assets/Office_A_20110811.ifc');
         static::assertTrue(file_exists($file));
     }
 
     public function testGltfFileExtension ()
     {
-        $file = (new Converter())->convertColladaToGlTF('../assets/Office_A_20110811.ifc');
+        $file = (new Converter())->convertColladaToGlTF(__DIR__ . '/../assets/Office_A_20110811.ifc');
         $info = pathinfo($file);
         static::assertEquals('.gltf', $info['extension']);
     }
