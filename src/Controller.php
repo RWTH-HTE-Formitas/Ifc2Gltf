@@ -11,10 +11,10 @@ use Slim\Http\Response;
  */
 final class Controller
 {
-    public function ifcToGltf(Request $request, Response $response, array $args)
+    public function ifcToGltf(Request $request, Response $response)
     {
         $ifcFilePath = $this->retrieveFile($request->getQueryParam('source'));
-        $glTfFilePath = $this->getConverter()->convertIfcToGlTF($ifcFilePath);
+        $glTfFilePath = (new Converter())->convertIfcToGlTF($ifcFilePath);
 
         return $response
             ->withAddedHeader('Content-Disposition', "attachment; filename=\"model.gltf\"")
@@ -46,10 +46,5 @@ final class Controller
         }
 
         return $targetPath;
-    }
-
-    private function getConverter(): Converter
-    {
-        return new Converter();
     }
 }

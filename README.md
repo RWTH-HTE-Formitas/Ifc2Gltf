@@ -14,7 +14,7 @@ WebIfc is a thin wrapper around [IfcOpenShell](http://ifcopenshell.org/ifcconver
 1. Build the docker image to be accessible via the tag `ifc2gltf`:
 
     ```bash
-    $ docker build -t ifc2gltf
+    $ docker build -t ifc2gltf .
     ```
 
 1. Run service to be accessible under `http://localhost:8080/` with bind-mounted source for development:
