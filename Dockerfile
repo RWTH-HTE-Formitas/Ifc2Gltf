@@ -11,6 +11,7 @@ RUN wget -O /tmp/colladatogltf.zip https://github.com/KhronosGroup/COLLADA2GLTF/
     && ln -s /tmp/colladatogltf/COLLADA2GLTF-bin /usr/local/bin/COLLADA2GLTF-bin
 
 COPY . /app
+COPY ./config/nginx/10-php.conf /opt/docker/etc/nginx/vhost.common.d/10-php.conf
 
 RUN composer self-update
 RUN composer install --working-dir=/app --prefer-dist --no-progress --no-interaction
