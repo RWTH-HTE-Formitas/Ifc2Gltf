@@ -1,3 +1,7 @@
 composer.lock
 coverage.xml
 vendor/
+conversion/Binaries
+conversion/IFC
+conversion/collada
+conversion/gltf
