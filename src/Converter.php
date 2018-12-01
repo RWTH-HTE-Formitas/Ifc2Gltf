@@ -35,7 +35,7 @@ final class Converter
     public function convertIfcToCollada(string $ifcFilePath): string
     {
         $targetFilePath = TemporaryFileFactory::getTemporaryFilePath('.dae');
-        (new Process(['IfcConvert', $ifcFilePath, $targetFilePath]))->setTimeout(null)->mustRun();
+        (new Process(['IfcConvert', '--use-element-guids', $ifcFilePath, $targetFilePath]))->setTimeout(null)->mustRun();
 
         return $targetFilePath;
     }
