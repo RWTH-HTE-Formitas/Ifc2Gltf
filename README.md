@@ -38,5 +38,5 @@ $ curl --output model.gltf http://localhost:8080/ifcToGltf?source=http://domain.
 The included tests can be run like this:
 
 ```bash
-$ docker run -it -v "$(pwd)"/:/app ifc2gltf /app/vendor/bin/phpunit /app/test
+$ docker run -it -v "$(pwd)"/:/app ifc2gltf /app/vendor/bin/phpunit -c /app/phpunit.xml
 ```

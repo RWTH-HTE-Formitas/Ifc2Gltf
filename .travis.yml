@@ -16,7 +16,7 @@ before_script:
 - docker ps -a
 
 script:
-- docker run -it -v "$(pwd)"/:/app ifc2gltf /app/vendor/bin/phpunit /app/test
+- docker run -it -v "$(pwd)"/:/app ifc2gltf /app/vendor/bin/phpunit -c /app/phpunit.xml
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
