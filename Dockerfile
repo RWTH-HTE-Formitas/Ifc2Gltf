@@ -1,4 +1,6 @@
-FROM webdevops/php-nginx:latest
+
+# Use dev-version to have xdebug for CI available (todo: separate into Dockerfile.dev)
+FROM webdevops/php-nginx-dev:latest
 
 # http://ifcopenshell.org/ifcconvert.html
 RUN wget --no-show-progress -O /tmp/ifcconvert.zip https://github.com/IfcOpenShell/IfcOpenShell/releases/download/v0.5.0-preview2/IfcConvert-master-9ad68db-linux64.zip \
