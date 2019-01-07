@@ -5,12 +5,18 @@ php:
   - '7.2'
   - nightly
 
+services:
+  - docker
+
 before_script:
 - composer self-update
 - composer install --no-interaction
+- docker build -t ifc2gltf .
+- docker run -d -p 8080:80 -v "$(pwd)"/:/app ifc2gltf
+- docker ps -a
 
 script:
-- composer test
+- docker run -it -v "$(pwd)"/:/app ifc2gltf /app/vendor/bin/phpunit /app/test
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
