@@ -1,5 +1,6 @@
 # Ifc2Gltf
 
+[![Build Status](https://travis-ci.org/RWTH-HTE-Formitas/Ifc2Gltf.svg?branch=master)](https://travis-ci.org/RWTH-HTE-Formitas/Ifc2Gltf)
 [![codecov](https://codecov.io/gh/RWTH-HTE-Formitas/Ifc2Gltf/branch/master/graph/badge.svg)](https://codecov.io/gh/RWTH-HTE-Formitas/Ifc2Gltf)
 
 WebIfc is a thin wrapper around [IfcOpenShell](http://ifcopenshell.org/ifcconvert.html) and [COLLADA2GLTF](https://github.com/KhronosGroup/COLLADA2GLTF) to provide a simple service to transparently convert [ifc](http://www.buildingsmart-tech.org/specifications/ifc-overview)- to [glTF](https://www.khronos.org/gltf/)-models.
