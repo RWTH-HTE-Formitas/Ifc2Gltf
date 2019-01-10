@@ -17,9 +17,9 @@ final class Controller
         $glTfFilePath = (new Converter())->convertIfcToGlTF($ifcFilePath);
 
         return $response
-            ->withAddedHeader('Content-Disposition', "attachment; filename=\"model.gltf\"")
+            ->withAddedHeader('Content-Disposition', "attachment; filename=\"model.glb\"")
             ->withAddedHeader('Content-Length', filesize($glTfFilePath))
-            ->withAddedHeader('Content-Type', 'model/gltf+json')
+            ->withAddedHeader('Content-Type', 'model/gltf-binary')
             ->write(file_get_contents($glTfFilePath))
         ;
     }

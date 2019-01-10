@@ -18,7 +18,7 @@ final class ConverterTest extends TestCase
     {
         $file = (new Converter())->convertIfcToGlTF(__DIR__ . '/../assets/Office_A_20110811.ifc');
         $info = pathinfo($file);
-        static::assertEquals('gltf', $info['extension']);
+        static::assertEquals('glb', $info['extension']);
     }
 
 
@@ -48,6 +48,6 @@ final class ConverterTest extends TestCase
     {
         $file = (new Converter())->convertColladaToGlTF(__DIR__ . '/../assets/Office_A_20110811.ifc');
         $info = pathinfo($file);
-        static::assertEquals('gltf', $info['extension']);
+        static::assertEquals('glb', $info['extension']);
     }
 }

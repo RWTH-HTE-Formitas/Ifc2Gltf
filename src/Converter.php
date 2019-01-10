@@ -49,8 +49,8 @@ final class Converter
      */
     public function convertColladaToGlTF(string $colladaFilePath): string
     {
-        $targetFilePath = TemporaryFileFactory::getTemporaryFilePath('.gltf');
-        (new Process(['COLLADA2GLTF-bin', $colladaFilePath, $targetFilePath]))->setTimeout(null)->mustRun();
+        $targetFilePath = TemporaryFileFactory::getTemporaryFilePath('.glb');
+        (new Process(['COLLADA2GLTF-bin', $colladaFilePath, $targetFilePath, '-b']))->setTimeout(null)->mustRun();
 
         return $targetFilePath;
     }
