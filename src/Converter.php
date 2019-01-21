@@ -19,7 +19,9 @@ final class Converter
      */
     public function convertIfcToGlTF(string $ifcFilePath): string
     {
-        $colladaFilePath = $this->convertIfcToCollada($ifcFilePath);
+        exec("java -jar ifcEntityFilter.jar $ifcFilePath");
+        $filteredIfcFilePath = substr($ifcFilePath, 0, -4) . '_filtered_.ifc';
+        $colladaFilePath = $this->convertIfcToCollada($filteredIfcFilePath);
         $glTfFilePath = $this->convertColladaToGlTF($colladaFilePath);
 
         return $glTfFilePath;
